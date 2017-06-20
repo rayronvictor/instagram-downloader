@@ -43,10 +43,16 @@
     </form>
 
     <script type="text/javascript">
+        function functSubmit(event) {
+          ga('send', 'event', 'donation', 'clicked');
+        }
+
         if(navigator.language == "pt-BR") {
             document.getElementById('paypalForm').style.display = 'none';
+            document.getElementById("pagsegForm").addEventListener('submit', functSubmit);
         } else {
             document.getElementById('pagsegForm').style.display = 'none';
+            document.getElementById("paypalForm").addEventListener('submit', functSubmit);
         }
     </script>
 </html>
